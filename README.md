@@ -1,8 +1,62 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## User Crendtials
+```
+Email: Any Vaild Mail
+Password: 123456
+```
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **1️⃣ Clone the Repository**
+Open your terminal and run:
+```
+git clone https://github.com/AsifAnjum/xen-dashboard.git
+cd xen-dashboard
+```
+
+---
+
+## **2️⃣ Install Dependencies**
+Run the following command inside the project directory:
+```
+npm install
+```
+or if using Yarn:
+```sh
+yarn install
+```
+or with PNPM:
+```sh
+pnpm install
+```
+
+---
+
+## **3️⃣ Set Up Environment Variables**
+
+```env
+VITE_APP_USER_API="https://jsonplaceholder.typicode.com/"
+VITE_APP_PRODUCT_API="https://api.restful-api.dev/"
+```
+
+
+---
+
+## **4️⃣ Run the Development Server**
+Start the Vite development server:
+```sh
+npm run dev
+```
+or
+```sh
+yarn dev
+```
+or
+```sh
+pnpm dev
+```
+
+This will start the app and provide a local URL (e.g., `http://localhost:5173/`).
+
+---
+
