@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
   const togglePassword = () => {
@@ -20,12 +21,19 @@ const Login = () => {
     const password = form.password.value;
 
     if (!email || !password) {
-      toast.error("Please fill all fields", {});
+      toast.error("Please fill all fields");
+      return;
     }
 
-    console.log("from fields", email, password);
+    if (password !== "123456") {
+      setError("Password is incorrect");
+      toast.error("Login failed", {
+        description: "Please check your email and password",
+      });
+      return;
+    }
 
-    // dispatch(userLoggedIn({ email: "asif" }));
+    dispatch(userLoggedIn({ email: email }));
   };
 
   return (
@@ -38,9 +46,9 @@ const Login = () => {
             <div className="">
               <label className="form-label">Email</label>
               <input
-                // type="email"
+                type="email"
                 name="email"
-                // required
+                required
                 className="form-input"
               />
             </div>
@@ -72,6 +80,8 @@ const Login = () => {
                 </button>
               )}
             </div>
+
+            {error && <p className="text-red-500">{error}</p>}
 
             <button type="submit" className="form-button">
               Login
