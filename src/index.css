@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+@layer base {
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--color-gray-400);
+    }
+
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+      cursor: pointer;
+    }
+  }
+
+.bg-login {
+    background-image: url(./assets/xentroBG.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.form-input {
+    @apply w-full rounded-md  border p-1  text-slate-500 focus:outline-none focus:border-green-400;
+  }
+
+.form-label {
+  @apply  text-sm font-medium text-gray-700
+}
+
+.form-button {
+  @apply w-full bg-gradient-to-b from-red-400 to-pink-600 font-semibold text-white rounded-md p-2 hover:bg-gradient-to-b hover:from-red-500 hover:to-pink-700 transition-colors duration-300;
+}
