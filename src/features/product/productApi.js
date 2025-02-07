@@ -22,13 +22,7 @@ const productApi = productApiSlice.injectEndpoints({
         body,
       }),
     }),
-    updateProduct: builder.mutation({
-      query: ({ id, body }) => ({
-        url: `objects/${id}`,
-        method: "PATCH",
-        body,
-      }),
-    }),
+
     deleteProduct: builder.mutation({
       query: (id) => ({
         url: `objects/${id}`,

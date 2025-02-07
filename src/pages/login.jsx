@@ -34,6 +34,7 @@ const Login = () => {
     }
 
     dispatch(userLoggedIn({ email: email }));
+    toast.success("Login successful");
   };
 
   return (

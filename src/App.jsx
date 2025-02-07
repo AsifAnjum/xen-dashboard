@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./routes/privateRoute";
 import PublicRoute from "./routes/publicRoute";
 import useAuthCheck from "./hooks/useAuthCheck";
@@ -9,6 +9,7 @@ import Users from "./pages/users";
 import Products from "./pages/products";
 import Product from "./pages/product";
 import AddProduct from "./pages/addProduct";
+import DashboardHome from "./components/dashboard/dashboardHome";
 
 function App() {
   const authChecked = useAuthCheck();
@@ -27,8 +28,15 @@ function App() {
           }
         />
 
-        <Route path="/" element={<PrivateRoute />}>
-          <Route index element={<Home />} />
+        <Route
+          path=""
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        >
+          <Route index element={<DashboardHome />} />
           <Route path="users" element={<Users />} />
           <Route path="user/:id" element={<User />} />
           <Route path="products" element={<Products />} />
