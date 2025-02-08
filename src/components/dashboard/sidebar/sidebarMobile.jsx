@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
 import SidebarIcon from "../../icon/sidebar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CloseIcon from "../../icon/close";
+import SidebarMenu from "./SidebarMenu";
 
 const SidebarMobile = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -9,20 +9,6 @@ const SidebarMobile = () => {
   const handleSidebar = () => {
     setSidebar((prev) => !prev);
   };
-
-  useEffect(() => {
-    const handleOutsideClick = () => {
-      if (sidebar) {
-        setSidebar(false);
-      }
-    };
-
-    document.addEventListener("click", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  });
 
   return (
     <div>
@@ -45,40 +31,7 @@ const SidebarMobile = () => {
               <CloseIcon />
             </button>
           </div>
-          <ul className="space-y-4 mt-20 text-slate-600 font-semibold">
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? "text-red-500" : "")}
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? "text-red-500" : "")}
-                to="/users"
-              >
-                User List
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? "text-red-500" : "")}
-                to="/products"
-              >
-                Products
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? "text-red-500" : "")}
-                to="/add-product"
-              >
-                Add Product
-              </NavLink>
-            </li>
-          </ul>
+          <SidebarMenu />
         </div>
       </div>
     </div>
