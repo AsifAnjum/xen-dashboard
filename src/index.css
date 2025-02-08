@@ -30,3 +30,7 @@
 .form-button {
   @apply w-full bg-gradient-to-b from-red-400 to-pink-600 font-semibold text-white rounded-md p-2 hover:bg-gradient-to-b hover:from-red-500 hover:to-pink-700 transition-colors duration-300;
 }
+
+.sidebar-btn {
+  @apply flex items-center gap-2 border-[1.5px] border-slate-300 hover:bg-slate-800 rounded hover:text-white duration-300 transition-colors p-2 text-slate-600 font-semibold 
+}
