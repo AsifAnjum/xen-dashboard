@@ -46,7 +46,7 @@ const Home = () => {
           </ul>
         </div>
         <div className="hidden lg:block bg-slate-500 mt-20 h-36 w-0.5 "></div>
-        <div className="mt-20">
+        <div className="mt-20 container mx-auto">
           <Outlet />
         </div>
       </div>

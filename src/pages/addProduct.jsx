@@ -42,8 +42,8 @@ const AddProduct = () => {
   }, [isSuccess, isError]);
 
   return (
-    <div>
-      <h1>Add Product</h1>
+    <div className="shadow-xl p-10 rounded-lg">
+      <h1 className="text-xl font-bold font-mono">Add Product</h1>
       <form onSubmit={handleSubmit} className="mt-4 space-y-4">
         <div className="">
           <label className="form-label">Name</label>
